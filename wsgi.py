@@ -4,7 +4,7 @@ import tiradady
 from settings import TELEGRAM_TOKEN, OPENSHIFT_GEAR_DNS, OPENSHIFT_PYTHON_IP, OPENSHIFT_PYTHON_PORT
 
 app = Flask(__name__)
-update_queue, bot_instance = tiradady.setup(webhook_url='https://{}/{}'.format(OPENSHIFT_GEAR_DNS,TELEGRAM_TOKEN))
+#update_queue, bot_instance = tiradady.setup(webhook_url='https://{}/{}'.format(OPENSHIFT_GEAR_DNS,TELEGRAM_TOKEN))
 
 @app.route('/')
 def index():
