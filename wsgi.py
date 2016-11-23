@@ -1,6 +1,6 @@
 from flask import Flask, request
-from telegram import Update
-import tiradady
+#from telegram import Update
+#import tiradady
 from settings import TELEGRAM_TOKEN, OPENSHIFT_GEAR_DNS, OPENSHIFT_PYTHON_IP, OPENSHIFT_PYTHON_PORT
 
 app = Flask(__name__)
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return "<par>I'm creating this to make a Telegram bot for my friends<br>and I'm actually enjoing it!!</par>"+TELEGRAM_TOKEN
+	return "<par>I'm creating this to make a Telegram bot for my friends<br>and I'm actually enjoing it!!\n</par>"+TELEGRAM_TOKEN
 '''
 @app.route('/'+TELEGRAM_TOKEN)
 def webhook():
