@@ -19,5 +19,5 @@ def webhook():
 if __name__ == '__main__':
 	ip = OPENSHIFT_PYTHON_IP
 	port = int(OPENSHIFT_PYTHON_PORT)
-	app.run(host = ip, port = port)
+	app.run()#host = ip, port = port)
 	
