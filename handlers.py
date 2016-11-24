@@ -68,7 +68,7 @@ def tiradadi(bot,update,args):
 						text+= " " + str(tiro)
 						N-=1
 						
-					toreturn += ":"+ text + "\ntot: "+ str(tot)
+					toreturn += ":"+ text + "\n\ttot: "+ str(tot)
 					
 				if MP>0:
 					toreturn+=" + " + str(MP) + " = " + str(tot+MP)
