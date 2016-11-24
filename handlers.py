@@ -33,7 +33,7 @@ def argbychar(arg,mychar):
 	if not n:
 		return ": sintassi errata"
 	if not n.isdigit():
-		return ": ma questa parola ha '" + mychar +"' in mezzo, non rappresenta un lancio di dadi!!!\nche giro di parole per non usare gli accenti"
+		return ": ma questa parola ha '" + mychar +"' in mezzo, ma non rappresenta un lancio di dadi!!!\nche giro di parole per non usare gli accenti"
 	#controllo se ci sono malus/bonus
 	if "+" in dice:
 		tmp, modpl = dice.split("+")
@@ -86,6 +86,8 @@ def tiradadi(bot,update,args):
 			toreturn +='"'+ arg +'"'
 			if "d" in arg:
 				toreturn+=argbychar(arg,'d')
+			else if "D" in arg:
+				toreturn+=argbychar(arg,'D')
 			else:
 				toreturn+=": sintassi errata"
 			
