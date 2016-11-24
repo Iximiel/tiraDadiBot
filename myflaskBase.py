@@ -1,8 +1,10 @@
 from flask import Flask
 from settings import TELEGRAM_HOOK
 from telegram import Update
+from tiradadi import setBotUp
 
 app = Flask(__name__)
+update_queue, bot_instance = setBotUp()
 
 @app.route('/')
 def explanation():

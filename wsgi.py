@@ -14,14 +14,11 @@ except IOError:
 # line, it's possible required libraries won't be in your searchable path
 #
 
-from myflaskBase import app as application
-from tiradadi import setBotUp
-
-update_queue, bot_instance = setBotUp()
+import myflaskBase
 
 if __name__ == '__main__':
 	from wsgiref.simple_server import make_server
-	httpd = make_server('localhost', 8443, application)
+	httpd = make_server('localhost', 8443, myflaskBase.app)
     
 	httpd.serve_forever()
 
