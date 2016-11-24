@@ -5,7 +5,7 @@ from queue import Queue
 from telegram import Bot
 from telegram.ext import Dispatcher, Updater, CommandHandler
 
-from handlers import tiradedi as tiradadi
+from handlers import tiradadi
 
 #set up del bot
 def setBotUp():
