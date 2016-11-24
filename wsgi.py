@@ -18,7 +18,6 @@ from myflaskBase import app as application
 from myflaskBase import update_queue, bot_instance
 from tiradadi import setBotUp
 
-app = Flask(__name__)
 update_queue, bot_instance = setBotUp()
 
 
