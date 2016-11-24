@@ -26,7 +26,7 @@ def tiradedi(bot,update,args):
 def tiradadi(bot,update,args):
 	if not args:
 		update.message.reply_text("lancia n dadi di tipo x, puoi aggiungere o togliere y: /tira ndx+y")
-	else
+	else:
 		for arg in args:
 			toreturn ='"'+ arg +'"'
 			if "d" in arg:
