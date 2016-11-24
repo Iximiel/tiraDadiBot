@@ -5,8 +5,8 @@ with open('requirements.txt') as f:
 	requirements = f.read().splitlines()
 
 setup(name='mydice',
-	version='0.1.0',
-	description='OpenShift App',
+	version='1.0.1',
+	description='OpenShift App for launching dices',
 	author='Daniele Rapetti',
 	author_email='iximie@gmail.com',
 	url='http://www.python.org/sigs/distutils-sig/',
