@@ -38,17 +38,26 @@ def argbychar(arg,mychar):
 	if "+" in dice:
 		tmp, modpl = dice.split("+")
 		dice = tmp
+		if not modpl.isdigit():
+			return ": sintassi errata"
 		MP = int(modpl)
 	
 	if "-" in dice:
 		tmp, modmin = dice.split("-")
 		dice = tmp
+		if not modmin.isdigit():
+			return ": sintassi errata"
 		MM = int(modmin)
 	
 	N = int(n)
 	if N>1000:
 		return ": tira meno dadi!"
+		
+	if dice == '%':
+		dice = '100'
 	
+	if not dice.isdigit():
+			return ": sintassi errata"
 	D = int(dice)
 	
 	if D>500:
