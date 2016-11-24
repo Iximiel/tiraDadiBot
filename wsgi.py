@@ -21,7 +21,7 @@ from settings import TELEGRAM_HOOK
 
 update_queue, bot_instance = setBotUp()
 
-@application.route('/'+TELEGRAM_HOOK)
+@application.route('/'+TELEGRAM_HOOK, methods=['GET', 'POST'])
 def webhook():
 	if request.json:
 		update_queue.put(Update.de_json(request.json, bot_instance))
