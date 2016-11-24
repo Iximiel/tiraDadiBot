@@ -24,10 +24,17 @@ def tiradedi(bot,update,args):
 
 	
 def tiradadi(bot,update,args):
+	message = ''
 	if not args:
-		update.message.reply_text("lancia n dadi di tipo x, puoi aggiungere o togliere y: /tira ndx+y")
+		message = "lancia n dadi di tipo x, puoi aggiungere o togliere y: /tira ndx+y"
 	else:
+		primo = True
 		for arg in args:
+			toreturn = ''
+			if primo:
+				primo=False
+			else:
+				toreturn += '\n'
 			toreturn ='"'+ arg +'"'
 			if "d" in arg:
 				N = 0 #numero di dadi da lanciare
@@ -69,6 +76,7 @@ def tiradadi(bot,update,args):
 					toreturn+=" - " + str(MM) + " = " + str(tot-MM)
 
 			else:
-				toreturn+=": sintassi errata, ricordati di usare d minuscolo!!!"	
+				toreturn+=": sintassi errata, ricordati di usare d minuscolo!!!"
+			message+=toreturn
 				
-			update.message.reply_text(toreturn)
+	update.message.reply_text(message)
