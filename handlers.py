@@ -22,11 +22,6 @@ def tiradedi(bot,update,args):
         bot.send_message(chat_id=update.message.chat_id, text=type(arg))
 	#update.message.reply_text('Hello from openshift! ' + str(dado(10)))
 
-'''
-AGGIUNGERE controllo errori
-tipo 200 d100
-o rifiutare se N>2000
-'''
 def argbychar(arg,mychar):
 	toreturn = ""
 	N = 0 #numero di dadi da lanciare
@@ -34,9 +29,11 @@ def argbychar(arg,mychar):
 	MP = 0 #bonus positivi
 	MM = 0 #malus
 	#procedo col dividere la sintassi del tiro di dado
-	n,dice = arg.split(mychar)
+	n,dice = arg.split(mychar,1)
 	if not n:
 		return ": sintassi errata"
+	if not n.isdigit():
+		return ": ma questa parola ha '" + mychar +"' in mezzo, non rappresenta un lancio di dadi!!!\nche giro di parole per non usare gli accenti"
 	#controllo se ci sono malus/bonus
 	if "+" in dice:
 		tmp, modpl = dice.split("+")
@@ -51,6 +48,7 @@ def argbychar(arg,mychar):
 	N = int(n)
 	if N>1000:
 		return ": tira meno dadi!"
+	
 	D = int(dice)
 	tot = 0
 	if N == 1:
