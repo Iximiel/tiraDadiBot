@@ -4,7 +4,7 @@ from settings import TELEGRAM_TOKEN, TELEGRAM_URL_HOOK
 from queue import Queue
 from telegram import Bot
 from telegram.ext import Dispatcher, Updater, MessageHandler
-from hadlers import example_handler
+from handlers import example_handler
 
 #set up del bot
 def setBotUp():
