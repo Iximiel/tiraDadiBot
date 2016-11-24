@@ -14,11 +14,12 @@ except IOError:
 # line, it's possible required libraries won't be in your searchable path
 #
 
-import myflaskBase
+from myflaskBase import app
+
 
 if __name__ == '__main__':
 	from wsgiref.simple_server import make_server
-	httpd = make_server('localhost', 8443, myflaskBase.app)
+	httpd = make_server('localhost', 8443, app)
     
 	httpd.serve_forever()
 
