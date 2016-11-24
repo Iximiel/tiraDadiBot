@@ -15,13 +15,15 @@ except IOError:
 #
 
 from myflaskBase import app as application
+from tiradadi import setBotUp
+#from telegram import Update
 
-#
-# Below for testing only
-#
+
+update_queue, bot_instance = setBotUp()
+
 if __name__ == '__main__':
 	from wsgiref.simple_server import make_server
-	httpd = make_server('localhost', 8051, application)
+	httpd = make_server('localhost', 8443, application)
     
 	httpd.serve_forever()
 
