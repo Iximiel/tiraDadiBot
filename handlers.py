@@ -35,7 +35,7 @@ def tiradadi(bot,update,args):
 				primo=False
 			else:
 				toreturn += '\n'
-			toreturn ='"'+ arg +'"'
+			toreturn +='"'+ arg +'"'
 			if "d" in arg:
 				N = 0 #numero di dadi da lanciare
 				D = 0 #tipo di dado
