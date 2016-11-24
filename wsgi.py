@@ -16,8 +16,6 @@ except IOError:
 
 from myflaskBase import app as application
 from tiradadi import setBotUp
-#from telegram import Update
-
 
 update_queue, bot_instance = setBotUp()
 

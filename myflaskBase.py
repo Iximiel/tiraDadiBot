@@ -1,5 +1,6 @@
 from flask import Flask
 from settings import TELEGRAM_HOOK
+from telegram import Update
 
 app = Flask(__name__)
 
@@ -9,8 +10,8 @@ def explanation():
 	
 @app.route('/'+TELEGRAM_HOOK)
 def webhook():
-	#if request.json:
-	#	update_queue.put(Update.de_json(request.json, bot_instance))
+	if request.json:
+		update_queue.put(Update.de_json(request.json, bot_instance))
 	return ''
 	
 if __name__ == '__main__':
