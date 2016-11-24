@@ -22,7 +22,57 @@ def tiradedi(bot,update,args):
         bot.send_message(chat_id=update.message.chat_id, text=type(arg))
 	#update.message.reply_text('Hello from openshift! ' + str(dado(10)))
 
+'''
+AGGIUNGERE controllo errori
+tipo 200 d100
+o rifiutare se N>2000
+'''
+def argbychar(arg,mychar):
+	toreturn = ""
+	N = 0 #numero di dadi da lanciare
+	D = 0 #tipo di dado
+	MP = 0 #bonus positivi
+	MM = 0 #malus
+	#procedo col dividere la sintassi del tiro di dado
+	n,dice = arg.split(mychar)
+	if not n:
+		return ": sintassi errata"
+	#controllo se ci sono malus/bonus
+	if "+" in dice:
+		tmp, modpl = dice.split("+")
+		dice = tmp
+		MP = int(modpl)
 	
+	if "-" in dice:
+		tmp, modmin = dice.split("-")
+		dice = tmp
+		MM = int(modmin)
+	
+	N = int(n)
+	if N>1000:
+		return ": tira meno dadi!"
+	D = int(dice)
+	tot = 0
+	if N == 1:
+		tot = dado(D)
+		toreturn += ": "+ str(tot)
+	else :
+		text = ""
+		while N>0:
+			tiro = dado(D)
+			tot += tiro
+			text+= " " + str(tiro)
+			N-=1
+			
+		toreturn += ":"+ text + "\n\ttot: "+ str(tot)
+		
+	if MP>0:
+		toreturn+=" + " + str(MP) + " = " + str(tot+MP)
+	if MM>0:
+		toreturn+=" - " + str(MM) + " = " + str(tot-MM)
+	return toreturn
+	
+ 
 def tiradadi(bot,update,args):
 	message = ''
 	if not args:
@@ -37,46 +87,10 @@ def tiradadi(bot,update,args):
 				toreturn += '\n'
 			toreturn +='"'+ arg +'"'
 			if "d" in arg:
-				N = 0 #numero di dadi da lanciare
-				D = 0 #tipo di dado
-				MP = 0 #bonus positivi
-				MM = 0 #malus
-				#procedo col dividere la sintassi del tiro di dado
-				n,dice = arg.split("d")
-				#controllo se ci sono malus/bonus
-				if "+" in dice:
-					tmp, modpl = dice.split("+")
-					dice = tmp
-					MP = int(modpl)
-				
-				if "-" in dice:
-					tmp, modmin = dice.split("-")
-					dice = tmp
-					MM = int(modmin)
-				
-				N = int(n)
-				D = int(dice)
-				tot = 0
-				if N == 1:
-					tot = dado(D)
-					toreturn += ": "+ str(tot)
-				else :
-					text = ""
-					while N>0:
-						tiro = dado(D)
-						tot += tiro
-						text+= " " + str(tiro)
-						N-=1
-						
-					toreturn += ":"+ text + "\n\ttot: "+ str(tot)
-					
-				if MP>0:
-					toreturn+=" + " + str(MP) + " = " + str(tot+MP)
-				if MM>0:
-					toreturn+=" - " + str(MM) + " = " + str(tot-MM)
-
+				toreturn+=argbychar(arg,'d')
 			else:
-				toreturn+=": sintassi errata, ricordati di usare d minuscolo!!!"
+				toreturn+=": sintassi errata"
+			
 			message+=toreturn
-				
+	#print(message) debug only
 	update.message.reply_text(message)
