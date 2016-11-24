@@ -90,7 +90,7 @@ def tiradadi(bot,update,args):
 			toreturn +='"'+ arg +'"'
 			if "d" in arg:
 				toreturn+=argbychar(arg,'d')
-			else if "D" in arg:
+			elif "D" in arg:
 				toreturn+=argbychar(arg,'D')
 			else:
 				toreturn+=": sintassi errata"
