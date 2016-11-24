@@ -15,6 +15,7 @@ except IOError:
 #
 
 from myflaskBase import app as application
+from flask import request
 from tiradadi import setBotUp
 from telegram import Update
 from settings import TELEGRAM_HOOK
