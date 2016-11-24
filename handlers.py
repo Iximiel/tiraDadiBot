@@ -25,7 +25,7 @@ def tiradedi(bot,update,args):
 	
 def tiradadi(bot,update,args):
 	for arg in args:
-		toreturn = arg
+		toreturn ='"'+ arg +'"'
 		if "d" in arg:
 			N = 0 #numero di dadi da lanciare
 			D = 0 #tipo di dado
@@ -66,6 +66,6 @@ def tiradadi(bot,update,args):
 				toreturn+=" - " + str(MM) + " = " + str(tot-MM)
 
 		else:
-			toreturn="sintassi errata, ricordati di usare d minuscolo!!!"	
+			toreturn+=": sintassi errata, ricordati di usare d minuscolo!!!"	
 			
 		update.message.reply_text(toreturn)
