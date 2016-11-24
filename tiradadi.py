@@ -4,7 +4,8 @@ from settings import TELEGRAM_TOKEN, TELEGRAM_URL_HOOK
 from queue import Queue
 from telegram import Bot
 from telegram.ext import Dispatcher, Updater, CommandHandler
-from handlers import example_handler
+
+from handlers import tiradedi as tiradadi
 
 #set up del bot
 def setBotUp():
@@ -15,7 +16,7 @@ def setBotUp():
 	#setta il Dispatcher
 	dp = Dispatcher(bot, update_queue)
 	
-	dp.add_handler(CommandHandler('tira', example_handler))
+	dp.add_handler(CommandHandler('tira', tiradadi, pass_args=True))
 	
 	bot.set_webhook(webhook_url=TELEGRAM_URL_HOOK)
 	thread = Thread(target=dp.start, name='dispatcher')
