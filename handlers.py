@@ -50,6 +50,10 @@ def argbychar(arg,mychar):
 		return ": tira meno dadi!"
 	
 	D = int(dice)
+	
+	if D>500:
+		return ": tira dadi meno grossi, o devi proprio compensare?"
+		
 	tot = 0
 	if N == 1:
 		tot = dado(D)
