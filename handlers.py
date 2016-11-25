@@ -87,7 +87,7 @@ def argbychar(arg,mychar):
 def tiradadi(bot,update,args):
 	message = ''
 	if not args:
-		message = "lancia n dadi di tipo x, puoi aggiungere o togliere y: /tira ndx+y puoi scrivere più espressioni differenti, separate da uno spazio"
+		message = "lancia n dadi di tipo x, puoi aggiungere o togliere y: /tira ndx+y, puoi scrivere espressioni differenti, separate da uno spazio"
 	else:
 		primo = True
 		for arg in args:
