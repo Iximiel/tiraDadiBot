@@ -3,24 +3,26 @@ from random import randint
 def dado(num):
 	return randint(1,num)
 	
-def example_handler(bot, update):
-	# Remove this handler
-	bot.send_message(
-		update.message.chat_id,
-		text='Hello from openshift'
-	)
-'''
-def example_handler(bot, update):
-	# Remove this handler
-	#update.message.reply_text('Hello from openshift! ' + str(dado(10)))
-'''
-# Write your handlers here
+def d4(bot,update):
+	update.message.reply_text(str(dado(4)))
 
-def tiradedi(bot,update,args):
-	for arg in args:
-		bot.send_message(chat_id=update.message.chat_id, text=str(arg))
-        bot.send_message(chat_id=update.message.chat_id, text=type(arg))
-	#update.message.reply_text('Hello from openshift! ' + str(dado(10)))
+def d6(bot,update):
+	update.message.reply_text(str(dado(6)))
+
+def d8(bot,update):
+	update.message.reply_text(str(dado(8)))
+
+def d10(bot,update):
+	update.message.reply_text(str(dado(10)))
+
+def d12(bot,update):
+	update.message.reply_text(str(dado(12)))
+
+def d20(bot,update):
+	update.message.reply_text(str(dado(20)))
+
+def d100(bot,update):
+	update.message.reply_text(str(dado(100)))
 
 def argbychar(arg,mychar):
 	toreturn = ""

@@ -1,0 +1,8 @@
+tira -  lancia n dadi di tipo x, puoi aggiungere o togliere y: /tira ndx+y puoi scrivere più espressioni differenti, separate da uno spazio
+d4 - lancia un d4
+d6 - lancia un d6
+d8 - lancia un d8
+d10 - lancia un d10
+d12 - lancia un d12
+d20 - lancia un d20
+d% - lancia un d100
