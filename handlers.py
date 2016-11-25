@@ -31,9 +31,9 @@ def argbychar(arg,mychar):
 	#procedo col dividere la sintassi del tiro di dado
 	n,dice = arg.split(mychar,1)
 	if not n:
-		return ": sintassi errata"
+		n = '1'#se non c'e` n prova a lanciare un dado dingolo
 	if not n.isdigit():
-		return ": ma questa parola ha '" + mychar +"' in mezzo, ma non rappresenta un lancio di dadi!!!\nche giro di parole per non usare gli accenti"
+		return ": sintassi errata"
 	#controllo se ci sono malus/bonus
 	if "+" in dice:
 		tmp, modpl = dice.split("+")
