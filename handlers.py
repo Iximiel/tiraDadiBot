@@ -95,17 +95,20 @@ def tiradadi(bot,update,args):
 		primo = True
 		for arg in args:
 			toreturn = ''
-			if primo:
-				primo=False
+			if "#" in arg:
+				toreturn+=arg
 			else:
-				toreturn += '\n'
-			toreturn +='"'+ arg +'"'
-			if "d" in arg:
-				toreturn+=argbychar(arg,'d')
-			elif "D" in arg:
-				toreturn+=argbychar(arg,'D')
-			else:
-				toreturn+=": sintassi errata"
+				if primo:
+					primo=False
+				else:
+					toreturn += '\n'
+				toreturn +='"'+ arg +'"'
+				if "d" in arg:
+					toreturn+=argbychar(arg,'d')
+				elif "D" in arg:
+					toreturn+=argbychar(arg,'D')
+				else:
+					toreturn+=": sintassi errata"
 			
 			message+=toreturn
 	#print(message) debug only
