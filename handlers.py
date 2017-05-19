@@ -81,6 +81,7 @@ def argbychar(arg,mychar):
 		
 	if MP>0:
 		toreturn+=" + " + str(MP) + " = " + str(tot+MP)
+		tot+=MP
 	if MM>0:
 		toreturn+=" - " + str(MM) + " = " + str(tot-MM)
 	return toreturn
