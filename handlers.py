@@ -96,7 +96,7 @@ def tiradadi(bot,update,args):
 		for arg in args:
 			toreturn = ''
 			if "#" in arg:
-				toreturn+=arg
+				toreturn+=" "+arg
 			else:
 				if primo:
 					primo=False
