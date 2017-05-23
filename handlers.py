@@ -86,7 +86,7 @@ def argbychar(arg,mychar):
 		toreturn+=" - " + str(MM) + " = " + str(tot-MM)
 	return toreturn
 	
- 
+
 def tiradadi(bot,update,args):
 	message = ''
 	if not args:
@@ -113,3 +113,12 @@ def tiradadi(bot,update,args):
 			message+=toreturn
 	#print(message) debug only
 	update.message.reply_text(message)
+	
+def provakey(bot,update,args):
+	message = ''
+	custom_keyboard = [['top-left', 'top-right'],['bottom-left', 'bottom-right']]
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=chat_id, 
+                  text="Custom Keyboard Test", 
+                  reply_markup=reply_markup)
+	#update.message.reply_text(message)

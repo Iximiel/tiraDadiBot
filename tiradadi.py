@@ -5,7 +5,7 @@ from queue import Queue
 from telegram import Bot
 from telegram.ext import Dispatcher, Updater, CommandHandler
 
-from handlers import tiradadi ,d4, d6, d8, d10, d12, d20, d100
+from handlers import tiradadi ,d4, d6, d8, d10, d12, d20, d100, provakey
 
 #set up del bot
 def setBotUp():
@@ -16,6 +16,7 @@ def setBotUp():
 	#setta il Dispatcher
 	dp = Dispatcher(bot, update_queue)
 	
+	dp.add_handler(CommandHandler('prova', provakey, pass_args=True))
 	dp.add_handler(CommandHandler('tira', tiradadi, pass_args=True))
 	dp.add_handler(CommandHandler('d4', d4))
 	dp.add_handler(CommandHandler('d6', d6))
