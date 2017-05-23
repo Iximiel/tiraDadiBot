@@ -117,7 +117,7 @@ def tiradadi(bot,update,args):
 	
 def callKeyboard(bot,update,args):
 	#message = ''
-	custom_keyboard = [['7', '8', '9'],['4', '5', '6'],['1', '2', '3'],['d','+','-','0']
+	custom_keyboard = [['7', '8', '9'],['4', '5', '6'],['1', '2', '3'],['d','+','-','0']]
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
 	update.message.reply_text(text="Custom Keyboard Test", 
                   reply_markup=reply_markup,quote=False)
