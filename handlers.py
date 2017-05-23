@@ -124,3 +124,7 @@ def callKeyboard(bot,update,args):
 	update.message.reply_text(text="Custom Keyboard Test", 
                   reply_markup=reply_markup,quote=False)
 	#update.message.reply_text(message)
+def hideKeyboard(bot,update,args):	
+	reply_markup = telegram.ReplyKeyboardHide()
+	update.message.reply_text(text="Custom Keyboard Test undone", 
+                  reply_markup=reply_markup,quote=False)
