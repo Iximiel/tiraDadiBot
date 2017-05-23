@@ -114,7 +114,7 @@ def tiradadi(bot,update,args):
 	#print(message) debug only
 	update.message.reply_text(message)
 	
-def provakey(bot,update,args):
+def callKeyboard(bot,update,args):
 	message = ''
 	custom_keyboard = [['top-left', 'top-right'],['bottom-left', 'bottom-right']]
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
