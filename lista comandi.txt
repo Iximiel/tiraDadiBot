@@ -1,3 +1,4 @@
+﻿keyboard - chiama la tastiera (sperimentale)
 tira -  lancia n dadi di tipo x, puoi aggiungere o togliere y: /tira ndx+y puoi scrivere più espressioni differenti, separate da uno spazio
 d4 - lancia un d4
 d6 - lancia un d6

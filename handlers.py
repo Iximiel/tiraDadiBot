@@ -1,4 +1,5 @@
 from random import randint
+import telegram
 
 def dado(num):
 	return randint(1,num)
@@ -115,10 +116,10 @@ def tiradadi(bot,update,args):
 	update.message.reply_text(message)
 	
 def callKeyboard(bot,update,args):
-	message = ''
+	#message = ''
 	custom_keyboard = [['top-left', 'top-right'],['bottom-left', 'bottom-right']]
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
-	bot.send_message(chat_id=chat_id, 
+	update.send_message(chat_id=chat_id, 
                   text="Custom Keyboard Test", 
                   reply_markup=reply_markup)
 	#update.message.reply_text(message)
