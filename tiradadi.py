@@ -5,7 +5,7 @@ from queue import Queue
 from telegram import Bot
 from telegram.ext import Dispatcher, Updater, CommandHandler
 
-from handlers import tiradadi ,d4, d6, d8, d10, d12, d20, d100, callKeyboard
+from handlers import tiradadi ,d4, d6, d8, d10, d12, d20, d100, callKeyboard, hideKeyboard
 
 #set up del bot
 def setBotUp():
