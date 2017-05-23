@@ -119,7 +119,6 @@ def callKeyboard(bot,update,args):
 	#message = ''
 	custom_keyboard = [['top-left', 'top-right'],['bottom-left', 'bottom-right']]
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
-	update.message.reply(chat_id=chat_id, 
-                  text="Custom Keyboard Test", 
+	update.message.reply_text(text="Custom Keyboard Test", 
                   reply_markup=reply_markup)
 	#update.message.reply_text(message)
