@@ -108,6 +108,8 @@ def tiradadi(bot,update,args):
 					toreturn+=argbychar(arg,'d')
 				elif "D" in arg:
 					toreturn+=argbychar(arg,'D')
+				elif "%" in arg:
+					toreturn+=argbychar(arg,'%')
 				else:
 					toreturn+=": sintassi errata"
 			
