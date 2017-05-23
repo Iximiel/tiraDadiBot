@@ -16,7 +16,7 @@ def setBotUp():
 	#setta il Dispatcher
 	dp = Dispatcher(bot, update_queue)
 	
-	dp.add_handler(CommandHandler('keyboard', callKeyboard, pass_args=True))
+	#dp.add_handler(CommandHandler('keyboard', callKeyboard, pass_args=True))
 	dp.add_handler(CommandHandler('tira', tiradadi, pass_args=True))
 	dp.add_handler(CommandHandler('d4', d4))
 	dp.add_handler(CommandHandler('d6', d6))
